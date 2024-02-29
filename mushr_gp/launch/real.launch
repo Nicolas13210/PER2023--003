@@ -1,0 +1,21 @@
+<launch>
+
+    <arg name="path_topic" default="/global_planner/path" />
+    <arg name="start_topic" default="/particle_filter/inferred_pose" />
+    <arg name="goal_topic" default="/move_base_simple/goal" />
+    <arg name="map" default="/map" />
+    <arg name="car_name" default="car" />
+    <arg name="config_path" default="$(find mushr_gp)/config/config.yaml" />
+    <arg name="mprim_path" default="$(find mushr_gp)/mprim/mushr.mprim" />
+
+    <group ns="$(arg car_name)">
+        <node pkg="mushr_gp" type="planner_node" name="global_planner" output="screen">
+            <param name="path_topic" value="$(arg path_topic)" />
+            <param name="start_topic" value="/$(arg car_name)$(arg start_topic)" />
+            <param name="goal_topic" value="$(arg goal_topic)" />
+            <param name="config_path" value="$(arg config_path)" />
+            <param name="mprim_path" value="$(arg mprim_path)" />
+            <param name="map" value="$(arg map)" />
+        </node>
+    </group>
+</launch>

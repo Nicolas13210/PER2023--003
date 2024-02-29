@@ -1,0 +1,8 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+
+
+
+  <node pkg="vesc_driver" type="battery_check.py" name="battery_check" output="screen"/>
+</launch>
+

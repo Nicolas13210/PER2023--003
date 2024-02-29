@@ -1,0 +1,16 @@
+# Parameters for global planner
+perimeter: [[-.2, -.235], [.2, -.235], [.2, .235], [-.2, .235]]
+vel: 0.5
+time_45_deg: 10
+obs_thresh: 1 
+inscribed_thresh: 1 
+possibly_circumscribed_thresh: 0
+initial_epsilon: 3.0
+unknown_is_occupied: True
+replan_time: 3.0
+initial_eps: 3.0
+forward_search: False
+update_costmap: False
+regular_replan: False
+regular_replan_freq: 100
+search_mode: False
